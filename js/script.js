@@ -10,3 +10,15 @@
 // Esiste un oggetto JS in grado di gestire le date?
 // Esistono dei metodi per trasformare una data in millisecondi?
 
+// Creazione data del countdown
+let countDownDate = new Date("Feb 12, 2024 09:30:00").getTime();
+
+// Impostazione della funzione setinterval per contare tutti i secondi
+
+let time = setInterval(function() {
+
+    let todayDate = new Date().getTime();
+
+    let timeDifference = countDownDate - todayDate;
+
+}
