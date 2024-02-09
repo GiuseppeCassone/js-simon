@@ -23,9 +23,17 @@ let time = setInterval(function() {
 
 // Creazione dei calcoli dei parametri di tempo(data, ora, minuti e secondi)
 
-    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((distance % (1000 * 60)) / 1000 );
+    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((timeDifference % (1000 * 60)) / 1000 );
 
-}
+// Stampo in pagina gli elementi
+    document.getElementById("countdown").innerHTML = days + "g " + hours + "o " + minutes + "m " + seconds + "s ";
+
+    if (timeDifference < 0) {
+        clearInterval(time);
+        document.getElementById("countdown").innerHTML = "TEMPO SCADUTO";
+      }
+
+}, 1000);
