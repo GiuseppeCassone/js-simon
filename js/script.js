@@ -11,7 +11,7 @@
 // Esistono dei metodi per trasformare una data in millisecondi?
 
 // Creazione data del countdown
-let countDownDate = new Date("Feb 12, 2024 09:30:00").getTime();
+const countDownDate = new Date("Feb 12, 2024 09:30:00").getTime();
 
 // Impostazione della funzione setinterval per contare tutti i secondi
 
@@ -20,5 +20,12 @@ let time = setInterval(function() {
     let todayDate = new Date().getTime();
 
     let timeDifference = countDownDate - todayDate;
+
+// Creazione dei calcoli dei parametri di tempo(data, ora, minuti e secondi)
+
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000 );
 
 }
